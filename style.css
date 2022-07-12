@@ -1,0 +1,195 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: pink;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.controll .btn .icon-pause{
+    display: none;
+}
+
+.main-app{
+    max-width: 480px;
+    margin: 0 auto;
+    position: relative;
+}
+.main-app.playing .icon-pause {
+    display: inline-block;
+}
+.main-app.playing .icon-play{
+    display: none;
+} 
+.dashboard{
+    max-width: 480px;
+    width: 100%;
+    top: 0;
+    background-color: white;
+    padding: 16px 16px 14px;
+    border-bottom: 1px solid rgb(199, 199, 199);
+    position: fixed;
+}
+.dashboard header{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.dashboard header h4{
+    color: #ec1f55;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+.header-namesong{
+    width: 60%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.dashboard header h2{
+    font-size: 20px;
+    animation: slideNameSong infinite 5s linear;
+}
+@keyframes slideNameSong{
+    from{
+        transform: translateX(280px);
+    }
+    to{
+        transform: translateX(-280px);
+    }
+}
+.cd{
+    width: 200px;
+    margin: 0 auto; 
+}   
+.cd .cd-img{
+   padding-top: 100%;
+   width: 100%;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   border-radius: 50%;
+}
+
+.controll{
+    display: flex;
+    width: 100%;
+    padding: 18px 0 8px 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.controll .btn{
+    padding: 18px 30px;
+    font-size: 20px;  
+    color: #666;  
+}
+.controll .btn.active{
+    color: #ec1f55;
+}
+.controll .btn i{
+    cursor: pointer;
+}
+.controll .btn-toggle-play{
+    font-size: 50px;
+    color: #ec1f55;
+    padding: 14px 30px;
+}
+.controll .btn-mix i.active{
+    color: #ec1f55;
+}
+.controll .btn-repeat i.active{
+    color: #ec1f55;
+}
+.progress{
+    width: 100%;
+    height: 6px;
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+.progress:hover{
+    opacity: 1;
+}
+.progress::-webkit-slider-thumb{
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 10px; /* Set a specific slider handle width */
+    height: 6px; /* Slider handle height */
+    background: #ec1f55; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
+
+/* playlist */
+
+.playlist{
+    margin-top: 400px;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f5f5f5;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.song{
+    max-width: 460px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 8px 16px;
+    border-radius: 5px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    background-color: #fff;
+    cursor: pointer;
+    margin-bottom: 12px;
+}
+.song.active{
+    background-color: #ec1f55;
+}
+.song.active .option.active i{
+    color:#ec1f55;
+}
+.song.active .option,
+.song.active .body .singer,
+.song.active .body .name-song{
+    color: white;
+}
+.thump{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    height: 44px;
+    width: 44px;
+    margin-right: 25px;
+}
+.body{
+    flex: 1;
+}
+.body .name-song{
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.body .singer{
+    font-size: 12px;
+    color: #999;
+}
+.option{
+    padding: 16px 8px;
+    color: #999;
+    font-size: 18px;
+}
+
+@media (max-width: 739px) {
+    .controll .btn{
+        padding: 18px 25px;
+    }
+}
